@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Star, ShoppingCart, Eye } from 'lucide-react';
+import { Star, ShoppingCart, Eye, Heart } from 'lucide-react';
 
 const FeaturedProducts = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,54 +30,54 @@ const FeaturedProducts = () => {
   const handleWhatsAppRedirect = (action: string, productName: string) => {
     let message = '';
     if (action === 'add') {
-      message = `Olá! Gostaria de adicionar ao carrinho: ${productName}`;
+      message = `Olá! Tenho interesse no produto: ${productName}`;
     } else if (action === 'quote') {
-      message = `Olá! Gostaria de solicitar um orçamento para: ${productName}`;
+      message = `Olá! Gostaria de saber o preço do: ${productName}`;
     } else if (action === 'view') {
       message = `Olá! Gostaria de ver mais detalhes sobre: ${productName}`;
     } else {
       message = `Olá! Gostaria de ver todos os produtos disponíveis.`;
     }
     
-    const whatsappUrl = `https://wa.me/5567999999999?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/5596991775263?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const featuredProducts = [
     {
       id: 1,
-      name: "Plantadeira John Deere 2130",
-      category: "Plantadeiras",
-      price: "R$ 450.000",
-      originalPrice: "R$ 480.000",
-      image: "https://www.deere.com.br/assets/images/region-3/products/planting-equipment/dualflex-hitch/dualflex_estudio_large_348510ce4fc3841078cb501dbbe542eeb5d020f2.jpg",
-      rating: 4.8,
-      reviews: 24,
-      features: ["GPS Integrado", "20 Linhas", "Sistema Automático"],
+      name: "Ração Premium Royal Canin",
+      category: "Alimentação",
+      price: "R$ 89,90",
+      originalPrice: "R$ 99,90",
+      image: "https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      rating: 4.9,
+      reviews: 47,
+      features: ["Rica em Proteínas", "Para Cães Adultos", "15kg"],
       badge: "Mais Vendido"
     },
     {
       id: 2,
-      name: "Colheitadeira Case IH 6140",
-      category: "Colheitadeiras",
-      price: "R$ 1.200.000",
+      name: "Kit Higiene Completo",
+      category: "Higiene",
+      price: "R$ 45,90",
       originalPrice: null,
-      image: "https://static.wixstatic.com/media/f37214_2dccbbd253444ff580234e83743f7924~mv2.jpeg/v1/fill/w_560,h_374,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/f37214_2dccbbd253444ff580234e83743f7924~mv2.jpeg",
-      rating: 4.9,
-      reviews: 18,
-      features: ["Cabine Luxo", "Sistema Auto-Track", "Tanque 10.000L"],
-      badge: "Lançamento"
+      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      rating: 4.8,
+      reviews: 32,
+      features: ["Shampoo + Condicionador", "Perfume", "Para Todos os Pelos"],
+      badge: "Kit Completo"
     },
     {
       id: 3,
-      name: "Trator New Holland T7.245",
-      category: "Tratores",
-      price: "R$ 380.000",
-      originalPrice: "R$ 420.000",
-      image: "/lovable-uploads/b0e53f15-a099-4bb1-b233-49c1f725a92a.png",
+      name: "Brinquedo Interativo",
+      category: "Brinquedos",
+      price: "R$ 29,90",
+      originalPrice: "R$ 39,90",
+      image: "https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       rating: 4.7,
-      reviews: 32,
-      features: ["245cv", "Transmissão CVT", "Ar Condicionado"],
+      reviews: 28,
+      features: ["Material Resistente", "Estimula Inteligência", "Tamanho Médio"],
       badge: "Oferta"
     }
   ];
@@ -90,10 +90,10 @@ const FeaturedProducts = () => {
             Produtos em Destaque
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Equipamentos de <span className="text-primary">Última Geração</span>
+            Os <span className="text-primary">Favoritos</span> dos Pets
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Confira nossa seleção especial de máquinas e implementos que estão revolucionando o agronegócio
+            Confira nossa seleção especial dos produtos mais procurados e bem avaliados pelos nossos clientes
           </p>
         </div>
 
@@ -114,7 +114,7 @@ const FeaturedProducts = () => {
                   <div className="absolute top-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${
                       product.badge === 'Mais Vendido' ? 'bg-green-500 text-white' :
-                      product.badge === 'Lançamento' ? 'bg-blue-500 text-white' :
+                      product.badge === 'Kit Completo' ? 'bg-blue-500 text-white' :
                       'bg-red-500 text-white'
                     }`}>
                       {product.badge}
@@ -130,8 +130,17 @@ const FeaturedProducts = () => {
                       <Eye className="h-4 w-4" />
                     </Button>
                   </div>
+                  <div className="absolute bottom-4 right-4">
+                    <Button 
+                      size="sm" 
+                      variant="secondary" 
+                      className="bg-white/90 hover:bg-white opacity-0 group-hover:opacity-100 transition-opacity"
+                    >
+                      <Heart className="h-4 w-4" />
+                    </Button>
+                  </div>
                   {product.originalPrice && (
-                    <div className="absolute bottom-4 right-4 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
+                    <div className="absolute bottom-4 left-4 bg-red-500 text-white px-2 py-1 rounded text-xs font-bold">
                       OFERTA
                     </div>
                   )}
@@ -177,7 +186,7 @@ const FeaturedProducts = () => {
                       onClick={() => handleWhatsAppRedirect('add', product.name)}
                     >
                       <ShoppingCart className="mr-2 h-4 w-4" />
-                      Adicionar
+                      Comprar
                     </Button>
                     <Button 
                       variant="outline" 
@@ -185,7 +194,7 @@ const FeaturedProducts = () => {
                       className="border-primary/20"
                       onClick={() => handleWhatsAppRedirect('quote', product.name)}
                     >
-                      Orçamento
+                      Preço
                     </Button>
                   </div>
                 </div>

@@ -1,130 +1,156 @@
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Menu, X } from 'lucide-react';
-import { useIsMobile } from '@/hooks/use-mobile';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-  SheetClose,
-} from "@/components/ui/sheet";
 
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const isMobile = useIsMobile();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleWhatsAppClick = () => {
-    window.open('https://wa.me/5567987654321?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20implementos%20agrícolas.', '_blank');
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMenuOpen(false);
   };
 
   return (
-    <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'py-3 bg-background/95 backdrop-blur-md shadow-nav' 
-          : 'py-4 bg-transparent'
-      }`}
-    >
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between">
-          <a href="#" className="relative z-20">
-            <h1 className="text-xl md:text-2xl font-display font-bold text-foreground">
-              <span className="text-primary">AgroTech</span> Implementos
-            </h1>
-          </a>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-border shadow-nav">
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo e Nome da Empresa */}
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-lg">SJ</span>
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-foreground">São José Agropecuária</h1>
+              <p className="text-xs text-muted-foreground">Saúde e Bem Estar do Seu Pet</p>
+            </div>
+          </div>
 
-          {/* Desktop Menu */}
-          <nav className="hidden lg:flex items-center space-x-1">
-            <NavLinks />
+          {/* Navegação Desktop */}
+          <nav className="hidden md:flex items-center space-x-8">
+            <button
+              onClick={() => scrollToSection('hero')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Início
+            </button>
+            <button
+              onClick={() => scrollToSection('about')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Sobre
+            </button>
+            <button
+              onClick={() => scrollToSection('categories')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Produtos
+            </button>
+            <button
+              onClick={() => scrollToSection('products')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Destaques
+            </button>
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Depoimentos
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="text-foreground hover:text-primary transition-colors font-medium"
+            >
+              Contato
+            </button>
           </nav>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center">
-            <Button 
-              onClick={handleWhatsAppClick}
-              className="bg-primary hover:bg-primary/90 text-primary-foreground"
-            >
-              Solicitar Orçamento
-            </Button>
+          {/* Contato Rápido */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="flex items-center space-x-2 text-sm">
+              <Phone className="h-4 w-4 text-primary" />
+              <span className="text-muted-foreground">(96) 99177-5263</span>
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <Mail className="h-4 w-4 text-primary" />
+              <span className="text-muted-foreground">saojoseagrorh@gmail.com</span>
+            </div>
           </div>
 
-          {/* Mobile Menu */}
-          <div className="md:hidden">
-            <Sheet>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon" className="h-10 w-10 text-foreground">
-                  <Menu size={24} />
-                  <span className="sr-only">Abrir menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="top" className="pt-16 pb-8 px-6">
-                <nav className="flex flex-col items-center space-y-4 text-lg">
-                  <NavLinks mobile />
-                  <SheetClose asChild>
-                    <Button 
-                      onClick={handleWhatsAppClick}
-                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-4"
-                    >
-                      Solicitar Orçamento
-                    </Button>
-                  </SheetClose>
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+          {/* Menu Mobile */}
+          <button
+            onClick={toggleMenu}
+            className="md:hidden p-2 rounded-md hover:bg-muted transition-colors"
+            aria-label="Menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
         </div>
+
+        {/* Menu Mobile Expandido */}
+        {isMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border">
+            <nav className="flex flex-col space-y-4">
+              <button
+                onClick={() => scrollToSection('hero')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Início
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Sobre
+              </button>
+              <button
+                onClick={() => scrollToSection('categories')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Produtos
+              </button>
+              <button
+                onClick={() => scrollToSection('products')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Destaques
+              </button>
+              <button
+                onClick={() => scrollToSection('testimonials')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Depoimentos
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
+              >
+                Contato
+              </button>
+              
+              <div className="pt-4 border-t border-border space-y-2">
+                <div className="flex items-center space-x-2 text-sm">
+                  <Phone className="h-4 w-4 text-primary" />
+                  <span className="text-muted-foreground">(96) 99177-5263</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm">
+                  <Mail className="h-4 w-4 text-primary" />
+                  <span className="text-muted-foreground">saojoseagrorh@gmail.com</span>
+                </div>
+              </div>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
-  );
-};
-
-interface NavLinksProps {
-  mobile?: boolean;
-  onClick?: () => void;
-}
-
-const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
-  const links = [
-    { name: 'Início', href: '#hero' },
-    { name: 'Produtos', href: '#products' },
-    { name: 'Marcas', href: '#brands' },
-    { name: 'Sobre Nós', href: '#about' },
-    { name: 'Contato', href: '#contact' },
-  ];
-
-  return (
-    <>
-      {links.map((link) => (
-        <a
-          key={link.name}
-          href={link.href}
-          className={`font-medium transition-all duration-300 px-3 py-2 rounded-md
-            ${mobile 
-              ? 'text-xl text-foreground hover:text-primary mb-2 w-full text-center py-3' 
-              : 'text-foreground/80 hover:text-primary hover:bg-secondary/50'
-            }`}
-          onClick={onClick}
-        >
-          {link.name}
-        </a>
-      ))}
-    </>
   );
 };
 

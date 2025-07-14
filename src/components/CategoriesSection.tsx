@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Tractor, Sprout, ShieldCheck, Wrench, ArrowRight } from 'lucide-react';
+import { Heart, Bone, Scissors, Stethoscope, ArrowRight } from 'lucide-react';
 
 const CategoriesSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -28,43 +28,43 @@ const CategoriesSection = () => {
   }, []);
 
   const handleWhatsAppRedirect = (category: string) => {
-    const message = `Olá! Gostaria de ver os produtos da categoria ${category}.`;
-    const whatsappUrl = `https://wa.me/5567999999999?text=${encodeURIComponent(message)}`;
+    const message = `Olá! Gostaria de saber mais sobre ${category}.`;
+    const whatsappUrl = `https://wa.me/5596991775263?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const categories = [
     {
-      icon: <Tractor className="h-12 w-12 text-primary" />,
-      title: "Máquinas e Tratores",
-      description: "Plantadeiras, colheitadeiras, tratores e equipamentos de última geração",
-      items: ["Plantadeiras", "Colheitadeiras", "Tratores", "Pulverizadores"],
-      image: "/lovable-uploads/b0e53f15-a099-4bb1-b233-49c1f725a92a.png",
+      icon: <Heart className="h-12 w-12 text-primary" />,
+      title: "Alimentação",
+      description: "Rações premium e suplementos para todos os tipos de pets",
+      items: ["Ração Premium", "Petiscos Naturais", "Suplementos", "Alimentação Especial"],
+      image: "https://images.unsplash.com/photo-1601758228041-f3b2795255f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       color: "bg-green-500"
     },
     {
-      icon: <Sprout className="h-12 w-12 text-primary" />,
-      title: "Sementes e Mudas",
-      description: "Sementes certificadas e mudas de alta qualidade para sua lavoura",
-      items: ["Soja", "Milho", "Algodão", "Feijão"],
-      image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
-      color: "bg-yellow-500"
-    },
-    {
-      icon: <ShieldCheck className="h-12 w-12 text-primary" />,
-      title: "Defensivos e Fertilizantes",
-      description: "Proteção completa e nutrição adequada para suas culturas",
-      items: ["Herbicidas", "Fungicidas", "Inseticidas", "Fertilizantes"],
-      image: "https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+      icon: <Bone className="h-12 w-12 text-primary" />,
+      title: "Brinquedos e Acessórios",
+      description: "Diversão e conforto para o dia a dia do seu pet",
+      items: ["Brinquedos", "Coleiras e Guias", "Camas", "Transportadores"],
+      image: "https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       color: "bg-blue-500"
     },
     {
-      icon: <Wrench className="h-12 w-12 text-primary" />,
-      title: "Peças e Assistência",
-      description: "Peças originais e serviços especializados para seus equipamentos",
-      items: ["Peças Originais", "Manutenção", "Suporte Técnico", "Garantia"],
-      image: "/lovable-uploads/ed1a0b4e-6a76-423c-a8ab-cc75ca716c4b.png",
-      color: "bg-orange-500"
+      icon: <Scissors className="h-12 w-12 text-primary" />,
+      title: "Higiene e Beleza",
+      description: "Produtos para manter seu pet sempre limpo e bonito",
+      items: ["Shampoos", "Perfumes", "Escovas", "Cortadores de Unha"],
+      image: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      color: "bg-pink-500"
+    },
+    {
+      icon: <Stethoscope className="h-12 w-12 text-primary" />,
+      title: "Saúde e Medicamentos",
+      description: "Cuidados veterinários e produtos para saúde",
+      items: ["Medicamentos", "Vitaminas", "Antipulgas", "Primeiros Socorros"],
+      image: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      color: "bg-red-500"
     }
   ];
 
@@ -76,10 +76,11 @@ const CategoriesSection = () => {
             Nossos Produtos
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Soluções Completas para o <span className="text-primary">Agronegócio</span>
+            Tudo Para o <span className="text-primary">Bem-Estar</span> do Seu Pet
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Encontre tudo que você precisa para aumentar a produtividade da sua propriedade rural
+            Oferecemos uma linha completa de produtos de alta qualidade para cuidar da saúde, 
+            alimentação, higiene e diversão dos seus animais de estimação
           </p>
         </div>
 

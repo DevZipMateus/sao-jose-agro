@@ -1,6 +1,7 @@
+
 import { useEffect, useRef } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Phone, Mail, MapPin, Clock, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const ContactSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -29,25 +30,25 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5 text-primary" />,
       title: "Telefone",
-      details: "(67) 3345-6789",
-      link: "tel:+556733456789"
+      details: "(96) 99177-5263",
+      link: "tel:+5596991775263"
     },
     {
       icon: <Mail className="h-5 w-5 text-primary" />,
       title: "E-mail",
-      details: "vendas@agrotechimplementos.com.br",
-      link: "mailto:vendas@agrotechimplementos.com.br"
+      details: "saojoseagrorh@gmail.com",
+      link: "mailto:saojoseagrorh@gmail.com"
     },
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Endereço",
-      details: "Rod. BR-163, Km 85, Campo Grande - MS",
+      details: "Rua Brasil Novo, 298",
       link: "https://maps.google.com"
     },
     {
       icon: <Clock className="h-5 w-5 text-primary" />,
       title: "Horário",
-      details: "Segunda a Sexta, 7h às 17h | Sábado, 8h às 12h",
+      details: "Segunda a Sábado, 8h às 18h",
       link: null
     }
   ];
@@ -64,11 +65,11 @@ const ContactSection = () => {
             Entre em Contato
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Estamos Prontos para Atender Você
+            Estamos Aqui Para Ajudar Você
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Entre em contato conosco para orçamentos, assistência técnica ou informações sobre nossos implementos agrícolas.
-            Nossa equipe especializada está à disposição para ajudar no crescimento da sua propriedade rural.
+            Entre em contato conosco para saber mais sobre nossos produtos, tirar dúvidas sobre cuidados 
+            com pets ou fazer seu pedido. Nossa equipe está sempre pronta para atender você e seu pet.
           </p>
         </div>
 
@@ -79,8 +80,8 @@ const ContactSection = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-6">Informações de Contato</h3>
                   <p className="text-muted-foreground mb-8">
-                    Para solicitar orçamentos de implementos, agendar assistência técnica ou conhecer nossos produtos,
-                    utilize um dos canais de atendimento abaixo. Atendemos produtores rurais de todo o Centro-Oeste.
+                    Para dúvidas sobre produtos, cuidados com pets ou para fazer pedidos, 
+                    utilize um dos canais de atendimento abaixo. Atendemos com carinho e atenção.
                   </p>
                   
                   <div className="space-y-6 mb-8">
@@ -94,15 +95,6 @@ const ContactSection = () => {
                       />
                     ))}
                   </div>
-                  
-                  <div>
-                    <h4 className="text-lg font-medium mb-4">Siga-nos</h4>
-                    <div className="flex space-x-3">
-                      <SocialLink icon={<Facebook size={20} />} href="#" label="Facebook" />
-                      <SocialLink icon={<Instagram size={20} />} href="#" label="Instagram" />
-                      <SocialLink icon={<Linkedin size={20} />} href="#" label="LinkedIn" />
-                    </div>
-                  </div>
                 </div>
                 
                 <div className="flex items-center justify-center">
@@ -113,12 +105,13 @@ const ContactSection = () => {
                         <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
                       </svg>
                     </div>
-                    <h3 className="text-xl font-bold mb-3">Prefere atendimento via WhatsApp?</h3>
+                    <h3 className="text-xl font-bold mb-3">Prefere WhatsApp?</h3>
                     <p className="text-muted-foreground mb-6">
-                      Clique no botão do WhatsApp no canto inferior direito da tela para falar diretamente com nossos especialistas em implementos agrícolas e receber atendimento personalizado.
+                      Clique no botão do WhatsApp para falar diretamente conosco e receber 
+                      atendimento personalizado para seu pet.
                     </p>
                     <div className="text-sm text-muted-foreground">
-                      Tempo médio de resposta: <span className="font-medium text-foreground">15 minutos</span>
+                      Tempo médio de resposta: <span className="font-medium text-foreground">Imediato</span>
                     </div>
                   </div>
                 </div>
@@ -127,18 +120,18 @@ const ContactSection = () => {
           </Card>
         </div>
 
+        {/* Mapa placeholder - será implementado quando endereço completo for fornecido */}
         <div className="mt-16 animate-on-scroll">
           <Card className="border border-border/50 shadow-card overflow-hidden">
-            <div className="h-[400px] w-full">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3739.123456789!2d-54.6164919!3d-20.4629581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e1b123456789%3A0x123456789abcdef!2sBR-163%2C%20Campo%20Grande%20-%20MS!5e0!3m2!1spt-BR!2sbr!4v1627909542948!5m2!1spt-BR!2sbr"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                title="Mapa de localização - AgroTech Implementos"
-              ></iframe>
+            <div className="h-[400px] w-full bg-gradient-to-br from-green-50 to-blue-50 flex items-center justify-center">
+              <div className="text-center p-8">
+                <MapPin className="h-16 w-16 text-primary mx-auto mb-4" />
+                <h3 className="text-xl font-bold mb-2">Nossa Localização</h3>
+                <p className="text-muted-foreground max-w-md">
+                  Estamos localizados na Rua Brasil Novo, 298. 
+                  Entre em contato para mais informações sobre como chegar.
+                </p>
+              </div>
             </div>
           </Card>
         </div>
@@ -175,21 +168,5 @@ const ContactInfoItem = ({ icon, title, details, link }: ContactInfoItemProps) =
 
   return content;
 };
-
-interface SocialLinkProps {
-  icon: React.ReactNode;
-  href: string;
-  label: string;
-}
-
-const SocialLink = ({ icon, href, label }: SocialLinkProps) => (
-  <a
-    href={href}
-    className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-    aria-label={label}
-  >
-    {icon}
-  </a>
-);
 
 export default ContactSection;
