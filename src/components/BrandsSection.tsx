@@ -26,12 +26,12 @@ const BrandsSection = () => {
   }, []);
 
   const brands = [
-    { name: "John Deere", logo: "https://logos-world.net/wp-content/uploads/2020/04/John-Deere-Logo.png" },
-    { name: "Case IH", logo: "https://logoeps.com/wp-content/uploads/2013/01/case-ih-vector-logo.png" },
-    { name: "New Holland", logo: "https://logos-world.net/wp-content/uploads/2020/08/New-Holland-Logo.png" },
-    { name: "Massey Ferguson", logo: "https://logohistory.net/wp-content/uploads/2023/02/Massey-Ferguson-Logo.png" },
-    { name: "Valtra", logo: "https://logoeps.com/wp-content/uploads/2014/09/valtra-vector-logo.png" },
-    { name: "Kubota", logo: "https://logoeps.com/wp-content/uploads/2014/09/kubota-vector-logo.png" }
+    { name: "Royal Canin", logo: "https://logos-world.net/wp-content/uploads/2020/12/Royal-Canin-Logo.png" },
+    { name: "Pedigree", logo: "https://logos-world.net/wp-content/uploads/2021/02/Pedigree-Logo.png" },
+    { name: "Whiskas", logo: "https://logos-world.net/wp-content/uploads/2021/02/Whiskas-Logo.png" },
+    { name: "Purina", logo: "https://logos-world.net/wp-content/uploads/2021/02/Purina-Logo.png" },
+    { name: "Premier", logo: "https://example.com/premier-logo.png" },
+    { name: "Golden", logo: "https://example.com/golden-logo.png" }
   ];
 
   return (
@@ -42,10 +42,10 @@ const BrandsSection = () => {
             Nossas Marcas Parceiras
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Trabalhamos com as <span className="text-primary">Melhores Marcas</span> do Mercado
+            Trabalhamos com as <span className="text-primary">Melhores Marcas</span> para Pets
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Parceria com fabricantes reconhecidos mundialmente pela qualidade e inovação
+            Parceria com fabricantes reconhecidos mundialmente pela qualidade em produtos para animais de estimação
           </p>
         </div>
 
@@ -73,11 +73,11 @@ const BrandsSection = () => {
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
-              Peças Originais
+              Produtos Originais
             </div>
             <div className="flex items-center">
               <div className="w-2 h-2 bg-primary rounded-full mr-2"></div>
-              Assistência Técnica Especializada
+              Orientação Especializada
             </div>
           </div>
         </div>

@@ -54,12 +54,6 @@ const Header = () => {
               Produtos
             </button>
             <button
-              onClick={() => scrollToSection('products')}
-              className="text-foreground hover:text-primary transition-colors font-medium"
-            >
-              Destaques
-            </button>
-            <button
               onClick={() => scrollToSection('testimonials')}
               className="text-foreground hover:text-primary transition-colors font-medium"
             >
@@ -116,12 +110,6 @@ const Header = () => {
                 className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
               >
                 Produtos
-              </button>
-              <button
-                onClick={() => scrollToSection('products')}
-                className="text-left text-foreground hover:text-primary transition-colors font-medium mobile-nav-link"
-              >
-                Destaques
               </button>
               <button
                 onClick={() => scrollToSection('testimonials')}

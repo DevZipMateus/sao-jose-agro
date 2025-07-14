@@ -34,11 +34,11 @@ const AboutSection = () => {
             Sobre Nós
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-on-scroll">
-            Tecnologia e Experiência para o Sucesso do seu Agronegócio
+            Amor e Dedicação pelo <span className="text-primary">Bem-Estar</span> dos Pets
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto animate-on-scroll">
-            Mais que uma distribuidora de implementos, somos um parceiro estratégico comprometido com
-            a produtividade e crescimento sustentável da sua propriedade rural.
+            Mais que uma loja de produtos para pets, somos um parceiro dedicado ao cuidado e 
+            bem-estar dos seus animais de estimação.
           </p>
         </div>
 
@@ -46,20 +46,20 @@ const AboutSection = () => {
           <div className="space-y-6">
             <div className="animate-on-scroll">
               <h3 className="text-2xl font-bold mb-4">
-                Conte com a AgroTech Implementos
+                Conte com a São José Agropecuária
               </h3>
               <p className="text-muted-foreground mb-6">
-                Desde 2008, fornecemos soluções completas em implementos agrícolas para propriedades
-                de todos os tamanhos. Nossa abordagem combina expertise técnica com um atendimento
-                personalizado, garantindo que cada cliente receba os melhores equipamentos e
-                orientações adequadas às suas necessidades específicas de produção.
+                Desde 2020, oferecemos produtos de alta qualidade para o cuidado dos seus pets.
+                Nossa abordagem combina amor pelos animais com atendimento especializado,
+                garantindo que cada cliente receba os melhores produtos e orientações adequadas
+                às necessidades específicas dos seus animais de estimação.
               </p>
               <ul className="space-y-3">
                 {[
-                  'Equipe técnica especializada em agronegócio',
-                  'Amplo portfólio de marcas líderes do mercado',
-                  'Assistência técnica qualificada e peças originais',
-                  'Atendimento personalizado e suporte pós-venda'
+                  'Equipe especializada em cuidados com pets',
+                  'Amplo portfólio de marcas renomadas para pets',
+                  'Orientação qualificada e produtos originais',
+                  'Atendimento personalizado e suporte especializado'
                 ].map((item, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
@@ -74,22 +74,22 @@ const AboutSection = () => {
             <AboutCard 
               icon={<Target className="h-10 w-10 text-primary" />}
               title="Missão"
-              description="Fornecer implementos agrícolas de qualidade superior, oferecendo soluções completas que maximizam a produtividade e rentabilidade de nossos clientes no agronegócio."
+              description="Fornecer produtos de qualidade superior para pets, oferecendo soluções completas que promovem a saúde, bem-estar e felicidade dos animais de estimação."
             />
             <AboutCard 
               icon={<Heart className="h-10 w-10 text-primary" />}
               title="Visão"
-              description="Ser reconhecida como a principal distribuidora de implementos agrícolas do Centro-Oeste, criando parcerias duradouras baseadas em confiança e resultados."
+              description="Ser reconhecida como a principal loja de produtos para pets do Amapá, criando relacionamentos duradouros baseados em confiança e amor pelos animais."
             />
             <AboutCard 
               icon={<Award className="h-10 w-10 text-primary" />}
               title="Valores"
-              description="Comprometimento com a qualidade, inovação tecnológica, sustentabilidade, ética nos negócios e excelência no atendimento ao produtor rural."
+              description="Amor pelos animais, compromisso com a qualidade, sustentabilidade, ética nos negócios e excelência no atendimento aos tutores de pets."
             />
             <AboutCard 
               icon={<Check className="h-10 w-10 text-primary" />}
               title="Diferenciais"
-              description="Assistência técnica especializada, estoque completo, entrega rápida, financiamento facilitado e equipe com conhecimento prático do campo."
+              description="Orientação especializada, produtos de qualidade, atendimento personalizado, entrega rápida e equipe apaixonada por pets."
             />
           </div>
         </div>
