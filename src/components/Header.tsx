@@ -26,14 +26,10 @@ const Header = () => {
       <div className="bg-white/95 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            {/* Logo e Nome da Empresa */}
-            <div className="flex items-center space-x-3">
+            {/* Logo */}
+            <div className="flex items-center">
               <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-lg">SJ</span>
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-foreground">São José Agropecuária</h1>
-                <p className="text-xs text-muted-foreground">Saúde e Bem Estar do Seu Pet</p>
               </div>
             </div>
 
