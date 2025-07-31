@@ -32,24 +32,21 @@ const TestimonialsSection = () => {
       name: "Maria Silva",
       role: "Tutora da Luna",
       content: "Excelente atendimento! Os produtos são de ótima qualidade e minha cachorrinha Luna adora a ração premium que compro aqui. Recomendo muito!",
-      rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      rating: 5
     },
     {
       id: 2,
       name: "João Santos",
       role: "Tutor do Rex",
       content: "Encontro tudo que preciso para meu cachorro Rex. A equipe sempre me orienta sobre os melhores produtos. Atendimento personalizado e preços justos.",
-      rating: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      rating: 5
     },
     {
       id: 3,
       name: "Ana Costa",
       role: "Tutora da Mimi",
       content: "A São José Agropecuária se tornou minha loja de confiança. Produtos de qualidade, bom atendimento e sempre têm novidades para pets. Minha gata ama!",
-      rating: 5,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80"
+      rating: 5
     }
   ];
 
@@ -91,11 +88,6 @@ const TestimonialsSection = () => {
                 </p>
                 
                 <div className="flex items-center">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
-                  />
                   <div>
                     <h4 className="font-bold text-foreground">{testimonial.name}</h4>
                     <p className="text-sm text-muted-foreground">{testimonial.role}</p>
