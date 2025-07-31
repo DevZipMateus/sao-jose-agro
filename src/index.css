@@ -64,53 +64,6 @@
   }
 }
 
-/* Enhanced Hero Background Responsiveness */
-#hero {
-  position: relative;
-  min-height: 100vh;
-}
-
-/* Responsive background positioning */
-@media (max-width: 640px) {
-  #hero {
-    background-position: center 30% !important;
-    background-attachment: scroll !important;
-  }
-}
-
-@media (min-width: 641px) and (max-width: 768px) {
-  #hero {
-    background-position: center 40% !important;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  #hero {
-    background-position: center center !important;
-  }
-}
-
-@media (min-width: 1025px) {
-  #hero {
-    background-position: center center !important;
-    background-attachment: fixed !important;
-  }
-}
-
-/* Improved backdrop blur support */
-@supports (backdrop-filter: blur(10px)) {
-  .backdrop-blur-enhanced {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
-}
-
-@supports not (backdrop-filter: blur(10px)) {
-  .backdrop-blur-enhanced {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-}
-
 /* Custom animations */
 .animate-on-scroll {
   opacity: 0;
@@ -282,7 +235,7 @@ html {
   left: 100%;
 }
 
-/* Mobile optimizations with improved hero handling */
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .section-padding {
     @apply py-8;
@@ -303,21 +256,6 @@ html {
   .mobile-nav-link {
     @apply w-full text-center py-3 px-5;
   }
-
-  /* Mobile-specific hero optimizations */
-  #hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
-
-/* Tablet optimizations */
-@media (min-width: 769px) and (max-width: 1024px) {
-  #hero {
-    min-height: 100vh;
-  }
 }
 
 /* Accessibility improvements */
@@ -327,10 +265,6 @@ html {
   .product-card {
     transition: none;
     animation: none;
-  }
-
-  #hero {
-    background-attachment: scroll !important;
   }
 }
 
