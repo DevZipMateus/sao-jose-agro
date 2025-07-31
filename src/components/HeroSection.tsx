@@ -37,7 +37,7 @@ const HeroSection = () => {
       {/* Background com imagem responsiva */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/0426ccd2-71e9-4fd3-b642-1b2a8da23fe5.png" 
+          src="/lovable-uploads/1bacb47d-c13f-492d-a3b8-c9daf2228fb0.png" 
           alt="São José Agropecuária"
           className="w-full h-full object-cover object-center sm:object-center md:object-center lg:object-center xl:object-center"
         />
