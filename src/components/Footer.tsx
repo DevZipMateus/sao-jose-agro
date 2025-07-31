@@ -11,11 +11,12 @@ const Footer = () => {
           {/* Sobre a Empresa */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SJ</span>
-              </div>
+              <img 
+                src="/lovable-uploads/2dd9e36e-1c9b-4152-b20d-e331cf921397.png" 
+                alt="São José Agropecuária" 
+                className="h-12 w-auto"
+              />
               <div>
-                <h3 className="text-xl font-bold">São José Agropecuária</h3>
                 <p className="text-background/70 text-sm">Saúde e Bem Estar do Seu Pet</p>
               </div>
             </div>

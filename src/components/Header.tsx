@@ -28,9 +28,11 @@ const Header = () => {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center">
-              <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-lg">SJ</span>
-              </div>
+              <img 
+                src="/lovable-uploads/2dd9e36e-1c9b-4152-b20d-e331cf921397.png" 
+                alt="São José Agropecuária" 
+                className="h-12 w-auto"
+              />
             </div>
 
             {/* Navegação Desktop */}
