@@ -34,8 +34,15 @@ const HeroSection = () => {
 
   return (
     <section id="hero" ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background com gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-pink-50"></div>
+      {/* Background com imagem */}
+      <div className="absolute inset-0">
+        <img 
+          src="/lovable-uploads/b3c777f3-4aac-4b53-b647-7476a94729b7.png" 
+          alt="São José Agropecuária"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
       
       {/* Elementos decorativos */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-primary/10 rounded-full blur-xl animate-float"></div>
@@ -45,25 +52,25 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center max-w-5xl mx-auto">
           {/* Badge principal */}
-          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 animate-on-scroll">
+          <div className="inline-flex items-center px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 animate-on-scroll backdrop-blur-sm">
             <Heart className="h-4 w-4 mr-2" />
             Dedicados ao Bem-Estar dos Seus Pets
           </div>
 
           {/* Título principal */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 animate-on-scroll">
-            <span className="text-foreground">São José</span>
+            <span className="text-white drop-shadow-lg">São José</span>
             <br />
-            <span className="text-primary">Agropecuária</span>
+            <span className="text-primary drop-shadow-lg">Agropecuária</span>
           </h1>
 
           {/* Slogan */}
-          <p className="text-xl md:text-2xl text-muted-foreground font-medium mb-8 animate-on-scroll">
+          <p className="text-xl md:text-2xl text-white font-medium mb-8 animate-on-scroll drop-shadow-lg">
             Saúde e Bem Estar do Seu Pet
           </p>
 
           {/* Descrição */}
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed animate-on-scroll">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto mb-10 leading-relaxed animate-on-scroll drop-shadow-md">
             Oferecemos produtos de alta qualidade e serviços especializados para promover a saúde, 
             o bem-estar e a felicidade dos seus animais de estimação, com atendimento personalizado 
             e orientação especializada.
@@ -82,7 +89,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="px-8 py-4 text-lg border-primary/30 hover:bg-primary/10"
+              className="px-8 py-4 text-lg border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
               onClick={() => document.getElementById('categories')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Ver Produtos
@@ -91,7 +98,7 @@ const HeroSection = () => {
 
           {/* Cards de destaque */}
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto animate-on-scroll">
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
               <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <Heart className="h-6 w-6 text-green-600" />
               </div>
@@ -101,7 +108,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <Shield className="h-6 w-6 text-blue-600" />
               </div>
@@ -111,7 +118,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
+            <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 shadow-card hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-border/50">
               <div className="w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
                 <Sparkles className="h-6 w-6 text-pink-600" />
               </div>
@@ -126,8 +133,8 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
     </section>
