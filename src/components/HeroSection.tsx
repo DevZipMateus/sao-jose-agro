@@ -37,7 +37,7 @@ const HeroSection = () => {
       {/* Background com imagem */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/b3c777f3-4aac-4b53-b647-7476a94729b7.png" 
+          src="/lovable-uploads/fa4c1ed2-8c6d-48d7-b6b0-25731880d9b0.png" 
           alt="São José Agropecuária"
           className="w-full h-full object-cover"
         />
